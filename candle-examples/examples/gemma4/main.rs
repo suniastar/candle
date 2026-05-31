@@ -299,7 +299,7 @@ fn main() -> Result<()> {
             }
         };
         config.use_flash_attn = args.use_flash_attn;
-        let model = TextModel::new(&config, vb)?;
+        let model = TextModel::new(&config, vb.pp("model").pp("language_model"))?;
         ModelKind::TextOnly(model)
     };
 
